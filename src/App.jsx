@@ -1,7 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from '@emotion/react'
 import { CssBaseline, Grid } from '@mui/material'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, BrowserRouter } from 'react-router-dom'
 
 import theme from './theme'
 import Home from './components/Home'
@@ -13,6 +13,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <BrowserRouter basename='/basic-dictionary'>
         <Router>
           <Routes>
             <Route path='/' element={<Home/>}/>
@@ -21,6 +22,7 @@ const App = () => {
             <Route path='/enhance' element={<Enhance/>}/>
           </Routes>
         </Router>
+      </BrowserRouter>
     </ThemeProvider>
   )
 }
