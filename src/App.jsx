@@ -13,8 +13,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <BrowserRouter basename='/basic-dictionary'>
-        <Router>
+        <Router basename={window.location.pathname || ''}>
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/bookmarks' element={<Bookmarks/>}/>
@@ -22,7 +21,6 @@ const App = () => {
             <Route path='/enhance' element={<Enhance/>}/>
           </Routes>
         </Router>
-      </BrowserRouter>
     </ThemeProvider>
   )
 }
